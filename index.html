@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
 </head>
 <style>
 
@@ -208,12 +207,12 @@ iframe {
 
 /*---------------------------------------------*/
 input.input100 {
-  height: 40px;
+  height: auto;
 }
 
 
 textarea.input100 {
-  min-height: 110px;
+  min-height: auto;
   padding-top: 9px;
   padding-bottom: 13px;
 }
@@ -529,7 +528,7 @@ background-color: white;
 height:auto;
 width: auto;
 float: left;
-margin: 50px;
+margin: auto;
 
 
 }
@@ -538,15 +537,15 @@ height:auto;
 width:auto;
 
 float: left;
-margin:50px;
+margin:auto;
 }
 .logo{
-    height: 90px;
+	height: 8rem;
 }
 .calculator{
-	height: 100%;
+	height: 50%;
 	
-margin-left:200px;}
+margin-left:auto;}
 
 h1{
 	font-size: 20px;
@@ -575,7 +574,7 @@ h1{
 			<form class="contact100-form validate-form" id="form" action="https://formspree.io/ltQG4aafyXH9NZHlMSUYK" method="POST" onsubmit="return false">
 				<img src="https://assets.website-files.com/5e67c77c82e5f446e296eb4d/5ed7ed9211a068ec760cc86b_STAX%20LOGO%20V1.0%402x.png" class= "logo"alt="">
 <br><br>
-				<h1>Get your Capital Allowance estimate now.</h1>
+				<h1 style="color: white;">Get your Capital Allowance estimate now.</h1>
 				<br><br>
 <!-- ptype value % -->
 				<div class="wrap-input100 input100-select">
@@ -641,28 +640,28 @@ h1{
 					<span class="focus-input100"></span>
                 </div>
                 <div class="wrap-input100 input100-select">
-					<span class="label-input100">Tax Banding For Owner</span>
+					<span class="label-input100">Tax Banding For Owner*</span>
 					<div>
 						<select class="selection-2" id="tbrac" name="taxBanding">
 							<option>Select Tax Banding</option>
-							<option>19 %</option>
-							<option>20 %</option>
-							<option>40 %</option>
-							<option>45 %</option>
+							<option value="19%">19 % (CT) </option>
+							<option value="20%">20 % (IT) </option>
+							<option value="40%">40 % (IT) </option>
+							<option value="45%">45 % (IT) </option>
 						</select>
 					</div>
 					<span class="focus-input100"></span>
 				</div>
 <div class="disclamer">
-	<h6>
+	<h6 style="color: white; font-weight: 500;">
 		Please tick that you are happy for S Tax you contact you regarding Capital Allowance related material. We will never share your data.
 
 	</h6>
-<br>
+
 	<input type="checkbox" id="pippers" value="41.3%">
 	<br>
-
-	<h6>*-Required field</h6>
+<br>
+	<h3 style="color: #fff; font-weight: 500;">* = Required fields</h3>
 </div>
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
@@ -686,19 +685,19 @@ h1{
 			
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required" >
-					<span class="label-input100">Your Name</span>
+					<span class="label-input100">Your Name*</span>
 					<input class="input100" id="name" type="text" name="name" placeholder="Enter your name" required>
 					<span class="focus-input100"></span>
                 </div>
                 
                 <div class="wrap-input100 validate-input" data-validate="Number is required">
-					<span class="label-input100">Your Number</span>
+					<span class="label-input100">Your Number*</span>
 					<input class="input100" id="number" type="text" name="number" placeholder="Enter your number" required>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-					<span class="label-input100">Email</span>
+					<span class="label-input100">Email*</span>
 					<input class="input100" id="email" type="text" name="email" placeholder="Enter your email addess" required>
 					<span class="focus-input100"></span>
 				</div>
@@ -725,7 +724,7 @@ h1{
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn" input type="submit" value="Send" id="b" onclick="calculate ()">
+						<button class="contact100-form-btn" input type="submit" value="Send" id="b" onclick="calculate ()" disabled>
 							<span>
 								Check allowances now
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
@@ -762,8 +761,43 @@ h1{
 	<div id="dropDownSelect1"></div>
 
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/
+jquery.min.js"></script>
+<script type="text/javascript">
+ 
+    $("#name").keyup(function(event) {
+        validateInputs();
+    });
+ 
+    $("#email").keyup(function(event) {
+        validateInputs();
+    });
+ 
+    $("#number").keyup(function(event) {
+        validateInputs();
+    });
+ 
+    $("#tbrac").keyup(function(event) {
+        validateInputs();
+    });
+ 
+    function validateInputs(){
+        var disableButton = false;
+ 
+        var val1 = $("#name").val();
+        var val2 = $("#email").val();
+        var val3 = $("#number").val();
+        var val4 = $("#tbrac").val();
+ 
+        if(val1.length == 0 || val2.length == 0 || val3.length == 0 || val4.length == 0)
+            disableButton = true;
+ 
+        $('#b').attr('disabled', disableButton);
+    }
+</script>
+
+
 <script>
   
 
@@ -807,6 +841,7 @@ Email: document.getElementById("email").value,
 Phone_number: document.getElementById("number").value,
 Property_type: document.getElementById("ptype").value,
 Property_price: document.getElementById("pprice").value,
+Property_improvement_spend: document.getElementById("pipend").value,
 Expected_CA_output: document.getElementById("answer").innerHTML,
 Cash_benefit_output: document.getElementById("answer2").innerHTML
 },
