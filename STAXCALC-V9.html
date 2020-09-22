@@ -487,37 +487,53 @@ textarea.input100 {
 }
 
 .calculator{
-height: 700px;
-width: auto;
-justify-content: center ;
+height: auto;
+width: 650px;
 align-content: flex;
+position: static;
+columns: 2;
+column-gap: 0px;
+column-width: 320px;
+justify-content: center;
+background-color: #1C1B1B;
+border-radius: 10px;
+padding-right: 30px;
+
 
 
 }
 
 .container1{
-height:auto;
-width: auto;
+display: inline-block;
+height:500px;
+max-height: auto;
+min-height: 300px;
+width: 320px;
 float: left;
-margin: auto;
+line-height: 1.4;
+vertical-align: top;
+margin-left: 0px;
+
+
+
 
 
 }
 .container2{
-height:auto;
-width:auto;
+display: inline-block;
+height:500px;
+max-height: auto;
+min-height: 300px;
+width:320px;
+line-height: 1.4;
+vertical-align: top;
+margin-left: 0px;
 
-float: left;
-margin:auto;
+
 }
 .logo{
-	height: 8rem;
+	height: 4rem;
 }
-.calculator{
-	height: 50%;
-	
-margin-left:auto;}
-
 
 .col {
 	
@@ -533,6 +549,14 @@ margin-left:auto;}
 p {
   color: black;
 }
+
+@media (max-width: 600px) {
+  .calculator {
+    columns: 1;
+    rows:2;
+    width: 320px;
+  }
+}
 </style>
 <body>
 	<div class="app">
@@ -546,7 +570,7 @@ p {
 			<form class="contact100-form validate-form" id="form" action="https://formspree.io/ltQG4aafyXH9NZHlMSUYK" method="POST" onsubmit="return false">
 				<img src="https://assets.website-files.com/5e67c77c82e5f446e296eb4d/5ed7ed9211a068ec760cc86b_STAX%20LOGO%20V1.0%402x.png" class= "logo"alt="">
 <br>
-<h1 style="color: white; font-size:36px; margin-right: 20px; padding-right:10px;">Get your Capital Allowance estimate now.</h1>
+<h1 style="color: white; font-size:24px; margin-right: 20px; padding-right:10px;">30second Capital Allowance estimate</h1>
 				<br>
 <!-- ptype value % -->
 				<div class="wrap-input100 input100-select">
@@ -561,7 +585,7 @@ p {
 							<option value="27.50%">Café</option>
 							<option value="22.00%">Car Show Room</option>
 							<option value="27.50%">Cinema</option>
-							<option value="20.00%">Collage / University Campus</option>
+							<option value="20.00%">College / University Campus</option>
 							<option value="27.00%">Dental Surgery</option>
 							<option value="25.00%">Doctor Surgery </option>
 							<option value="55.00%">Energy Plant</option>
@@ -593,21 +617,21 @@ p {
 				</div>
 
 				<div class="wrap-input100 input100-select">
-					<span class="label-input100" >Property Purchase Price* (please do not use £ or , )</span>
+					<span class="label-input100" >Property Purchase Price* (Numbers Only, No Syntax)</span>
 					<div>
 						<input type="currency" id="pprice" name="purchasePrice" placeholder="£400,000"
-						step="5000.01" min="0.00" max="999,999,999.01" style="background: rgb(28, 27, 27); color: white;" >
+						step="5000.01" min="0.00" max="999,999,999.01" style="background: rgb(255, 255, 255); color: rgb(0, 0, 0);" >
 							
 					</div>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 input100-select">
-					<span class="label-input100">Property Improvement Spend* (please do not use £ or , )</span>
+					<span class="label-input100">Property Improvement Spend* (Numbers Only, No Syntax)</span>
 					<div>
 						
-						<input type="currency" id="pipend" name="improvementSpend"placeholder="£200,000"
-						step="5000.00" min=".01" max="999,999,999.99" style="background: rgb(28, 27, 27); color: white;">
+						<input type="currency" id="pipend" name="improvementSpend" placeholder="£200,000"
+						step="5000.00" min=".01" max="999,999,999.99" style="background: rgb(255, 255, 255); color: rgb(0, 0, 0);">
 					</div>
 					<span class="focus-input100"></span>
                 </div>
@@ -624,15 +648,11 @@ p {
 					</div>
 					<span class="focus-input100"></span>
 				</div>
-<div class="disclamer">
-	<h6 style="color: white; font-weight: 500;">
-		Please tick that you are happy for S Tax you contact you regarding Capital Allowance related material. We will never share your data.
-    <input type="checkbox" id="pippers" value="41.3%"> </h6>
 
 	
 	
 
-	<h3 style="color: rgb(51, 209, 236); font-size: 16px; font-weight: 500;">Fields with * must be populated for calculator to work.</h3>
+	<h3 style="color: rgb(236, 51, 51); padding-bottom: 10px; font-size: 14px; line-height: 14px; font-weight: 500;">Fields with <span style="color: white;">*</span> must be populated for Allowance to calculate.</h3>
 </div>
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
@@ -642,12 +662,12 @@ p {
 				</div>
 			</form>
 		</div>
-	</div>
+	
 
 
 
 	<div id="dropDownSelect1"></div>
-</div>
+
 
 <div class="container2">
     <div class="container-contact100">
@@ -656,25 +676,25 @@ p {
 			
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required" >
-					<span class="label-input100">Your Name*</span>
-					<input class="input100" id="name" type="text" name="name" placeholder="Enter your name" required>
+					<span class="label-input100">Name*</span>
+					<input class="input100" style="background-color: white;" id="name" type="text" name="name" required>
 					<span class="focus-input100"></span>
                 </div>
                 
                 <div class="wrap-input100 validate-input" data-validate="Number is required">
-					<span class="label-input100">Your Number*</span>
-					<input class="input100" id="number" type="text" name="number" placeholder="Enter your number" required>
+					<span class="label-input100">Phone*</span>
+					<input class="input100" style="background-color: white;" id="number" type="text" name="number"  required>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 					<span class="label-input100">Email*</span>
-					<input class="input100" id="email" type="text" name="email" placeholder="Enter your email addess" required>
+					<input class="input100" style="background-color: white;" id="email" type="text" name="email" required>
 					<span class="focus-input100"></span>
 				</div>
 
 				<div class="wrap-input100 input100-select">
-					<span class="label-input100" name="purchaseDate">When did you buy the property</span>
+					<span class="label-input100" name="purchaseDate">Property Purchase Date</span>
 					<div>
 						<input type="date">
 					</div>
@@ -684,13 +704,19 @@ p {
 		
 
 				<div class="wrap-input100 validate-input" data-validate = "Address is required">
-					<span class="label-input100">Property Address</span>
-					<textarea class="input100" name="address" placeholder="Your address here..."></textarea>
+					<span class="label-input100">Building Address (optional)</span>
+                    <input class="input100" style="background-color: white" name="address" >
 					<span class="focus-input100"></span>
-					<div class="wrap-input100 validate-input" data-validate = "postcode is required">
-						<span class="label-input100"></span>
-					<textarea class="input10" name="Postcode" style="background-color:rgb(28, 27, 27); color: #ffffff;"></textarea>
-				</div>
+					<!-- <div class="wrap-input100 validate-input"> -->
+                        <!-- <span class="label-input100">Post/Area Code</span>
+		            <input class="input10" name="Postcode" style="background-color:rgb(255, 255, 255); color: #000000;"> -->
+                </div>
+                
+                <div class="disclamer">
+                    <h6 style="color: white; font-weight: 500;">
+                        Opt out recieving Capital Allowance related marketing material
+                    <input type="checkbox" id="pippers" value="41.3%"> </h6>
+                
 
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
@@ -711,13 +737,13 @@ p {
 		</div> 
 		<div class="col">
 		<div class="estimatedca">
-            <h1 style="color: white; font-size:20px; line-height: 20px; margin-right: 5px; word-wrap:break-word; padding-right:5px;">Estimated CA</h1>
-		<h1 id="answer" style="color: red; line-height: 0px; font-size:24px; word-wrap: break-word;" >£0.00</h1>
+            <h2 style="color: white; width: 100%; font-size:18px; line-height: 16px; margin-right: 5px; word-wrap:break-word; padding-right:5px;">Estimated CA</h2>
+		<h2 id="answer" style="color: red; line-height: 0px; font-size:18px; word-wrap: break-word;" >£0.00</h2>
 	
 	
 	<div>
-		<h1 style="color: white; font-size:20px; line-height: 20px; margin-right: 5px; word-wrap:break-word; padding-right:0px;">Cash Benefit</h1>
-		<h1 id="answer2" style="color: red; line-height: 0px; font-size:24px; word-wrap:break-word;" >£0.00</h1>
+		<h2 style="color: white; font-size:18px; width: 100%; line-height: 16px; margin-right: 5px; word-wrap:break-word; padding-right:0px;">Cash Benefit</h2>
+		<h2 id="answer2" style="color: red; line-height: 0px; font-size:18px; word-wrap:break-word;" >£0.00</h2>
 	</div></div>
  
 </div>
@@ -730,7 +756,7 @@ p {
 
 	<div id="dropDownSelect1"></div>
   
-</div>
+</div></div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/
 jquery.min.js"></script>
